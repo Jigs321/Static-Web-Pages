@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		
+<h1>Hey There</h1>
+
+		<label for="colors">Color:</label>
+		<input type="color" value="#ff0000" id="colors" />
+		
+<h1>You Are Noob Getout...........</h1>
+
+		<script>
+			var colors;
+			var defaultColor = "#0000ff";
+			window.addEventListener("load", startup, false);
+			function startup() {
+				colors = document.querySelector("#colors");
+				colors.value = defaultColor;
+				colors.addEventListener("change", updateAll, false);
+				colors.select();
+			}
+			function updateAll(event) {
+				document.querySelectorAll("h1").forEach(function (h1)
+				{
+					h1.style.color = event.target.value;
+				});
+			}
+		</script>
+	</body>
+</html>
